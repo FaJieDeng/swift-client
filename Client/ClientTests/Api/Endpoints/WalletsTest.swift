@@ -14,7 +14,7 @@ import XCTest
 class WalletsTest: XCTestCase {
 
     private var wallets: Wallets?
-    private let apiHost = "https://127.0.0.1:4003/api"
+    private let apiHost = "http://117.78.31.143:4103/api/v2"
     private var apiEndpoint: String {
         return "\(apiHost)/wallets"
     }
@@ -113,9 +113,10 @@ class WalletsTest: XCTestCase {
     }
 
     func testWalletsTransactionsAddress() {
+        
         let expectation = self.expectation(description: "Get transactions of wallet by address")
         var response: [String: Any]?
-        wallets?.transactions(byAddress: "dummyWalletAddress", completionHandler: { (res) in
+        wallets?.transactions(byAddress: "MCSLhhUNHQvVkjoL4CHWFEcJwsPrw7wBA6", completionHandler: { (res) in
             response = res
             expectation.fulfill()
         })

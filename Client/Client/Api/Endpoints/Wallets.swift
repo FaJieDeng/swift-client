@@ -39,69 +39,69 @@ public class Wallets {
     }
 
     /// Retrieves all wallets
-    public func all(limit: Int = 100, page: Int = 1, completionHandler: @escaping ([String: Any]?) -> Void) {
-        apiGetHandler(endpoint, ["limit": limit, "page": page], completionHandler)
+    public func all(limit: Int = 100, page: Int = 1, orderBy: String = "timestamp:desc", completionHandler: @escaping ([String: Any]?) -> Void) {
+        apiGetHandler(endpoint, ["limit": limit, "page": page, "orderBy": orderBy], completionHandler)
     }
 
     /// Retrieves top wallets
-    public func top(limit: Int = 100, page: Int = 1, completionHandler: @escaping ([String: Any]?) -> Void) {
-        apiGetHandler("\(endpoint)/top", ["limit": limit, "page": page], completionHandler)
+    public func top(limit: Int = 100, page: Int = 1, orderBy: String = "timestamp:desc", completionHandler: @escaping ([String: Any]?) -> Void) {
+        apiGetHandler("\(endpoint)/top", ["limit": limit, "page": page, "orderBy": orderBy], completionHandler)
     }
 
     /// Retrieves all transactions of a given wallet
-    public func transactions(byName id: String, limit: Int = 100, page: Int = 1, completionHandler: @escaping ([String: Any]?) -> Void) {
-        apiGetHandler("\(endpoint)/\(id)/transactions", ["limit": limit, "page": page], completionHandler)
+    public func transactions(byName id: String, limit: Int = 100, page: Int = 1, orderBy: String = "timestamp:desc", completionHandler: @escaping ([String: Any]?) -> Void) {
+        apiGetHandler("\(endpoint)/\(id)/transactions", ["limit": limit, "page": page, "orderBy": orderBy], completionHandler)
     }
 
-    public func transactions(byAddress id: String, limit: Int = 100, page: Int = 1, completionHandler: @escaping ([String: Any]?) -> Void) {
-        apiGetHandler("\(endpoint)/\(id)/transactions", ["limit": limit, "page": page], completionHandler)
+    public func transactions(byAddress id: String, limit: Int = 100, page: Int = 1, orderBy: String = "timestamp:desc", completionHandler: @escaping ([String: Any]?) -> Void) {
+        apiGetHandler("\(endpoint)/\(id)/transactions", ["limit": limit, "page": page, "orderBy": orderBy], completionHandler)
     }
 
-    public func transactions(byKey id: String, limit: Int = 100, page: Int = 1, completionHandler: @escaping ([String: Any]?) -> Void) {
-        apiGetHandler("\(endpoint)/\(id)/transactions", ["limit": limit, "page": page], completionHandler)
+    public func transactions(byKey id: String, limit: Int = 100, page: Int = 1, orderBy: String = "timestamp:desc", completionHandler: @escaping ([String: Any]?) -> Void) {
+        apiGetHandler("\(endpoint)/\(id)/transactions", ["limit": limit, "page": page, "orderBy": orderBy], completionHandler)
     }
 
     /// Retrieves all sent transactions of a given wallet
-    public func sentTransactions(byName id: String, limit: Int = 100, page: Int = 1, completionHandler: @escaping ([String: Any]?) -> Void) {
-        apiGetHandler("\(endpoint)/\(id)/transactions/sent", ["limit": limit, "page": page], completionHandler)
+    public func sentTransactions(byName id: String, limit: Int = 100, page: Int = 1, orderBy: String = "timestamp:desc", completionHandler: @escaping ([String: Any]?) -> Void) {
+        apiGetHandler("\(endpoint)/\(id)/transactions/sent", ["limit": limit, "page": page, "orderBy": orderBy], completionHandler)
     }
 
-    public func sentTransactions(byAddress id: String, limit: Int = 100, page: Int = 1, completionHandler: @escaping ([String: Any]?) -> Void) {
-        apiGetHandler("\(endpoint)/\(id)/transactions/sent", ["limit": limit, "page": page], completionHandler)
+    public func sentTransactions(byAddress id: String, limit: Int = 100, page: Int = 1, orderBy: String = "timestamp:desc", completionHandler: @escaping ([String: Any]?) -> Void) {
+        apiGetHandler("\(endpoint)/\(id)/transactions/sent", ["limit": limit, "page": page, "orderBy": orderBy], completionHandler)
     }
 
-    public func sentTransactions(byKey id: String, limit: Int = 100, page: Int = 1, completionHandler: @escaping ([String: Any]?) -> Void) {
-        apiGetHandler("\(endpoint)/\(id)/transactions/sent", ["limit": limit, "page": page], completionHandler)
+    public func sentTransactions(byKey id: String, limit: Int = 100, page: Int = 1, orderBy: String = "timestamp:desc", completionHandler: @escaping ([String: Any]?) -> Void) {
+        apiGetHandler("\(endpoint)/\(id)/transactions/sent", ["limit": limit, "page": page, "orderBy": orderBy], completionHandler)
     }
 
     /// Retrieves all received transactions of a given wallet
-    public func receivedTransactions(byName id: String, limit: Int = 100, page: Int = 1, completionHandler: @escaping ([String: Any]?) -> Void) {
-        apiGetHandler("\(endpoint)/\(id)/transactions/received", ["limit": limit, "page": page], completionHandler)
+    public func receivedTransactions(byName id: String, limit: Int = 100, page: Int = 1, orderBy: String = "timestamp:desc", completionHandler: @escaping ([String: Any]?) -> Void) {
+        apiGetHandler("\(endpoint)/\(id)/transactions/received", ["limit": limit, "page": page, "orderBy": orderBy], completionHandler)
     }
 
-    public func receivedTransactions(byAddress id: String, limit: Int = 100, page: Int = 1, completionHandler: @escaping ([String: Any]?) -> Void) {
-        apiGetHandler("\(endpoint)/\(id)/transactions/received", ["limit": limit, "page": page], completionHandler)
+    public func receivedTransactions(byAddress id: String, limit: Int = 100, page: Int = 1, orderBy: String = "timestamp:desc", completionHandler: @escaping ([String: Any]?) -> Void) {
+        apiGetHandler("\(endpoint)/\(id)/transactions/received", ["limit": limit, "page": page, "orderBy": orderBy], completionHandler)
     }
 
-    public func receivedTransactions(byKey id: String, limit: Int = 100, page: Int = 1, completionHandler: @escaping ([String: Any]?) -> Void) {
-        apiGetHandler("\(endpoint)/\(id)/transactions/received", ["limit": limit, "page": page], completionHandler)
+    public func receivedTransactions(byKey id: String, limit: Int = 100, page: Int = 1, orderBy: String = "timestamp:desc", completionHandler: @escaping ([String: Any]?) -> Void) {
+        apiGetHandler("\(endpoint)/\(id)/transactions/received", ["limit": limit, "page": page, "orderBy": orderBy], completionHandler)
     }
 
     /// Retrieves all votes of a wallet
-    public func votes(byName id: String, limit: Int = 100, page: Int = 1, completionHandler: @escaping ([String: Any]?) -> Void) {
-        apiGetHandler("\(endpoint)/\(id)/votes", ["limit": limit, "page": page], completionHandler)
+    public func votes(byName id: String, limit: Int = 100, page: Int = 1, orderBy: String = "timestamp:desc", completionHandler: @escaping ([String: Any]?) -> Void) {
+        apiGetHandler("\(endpoint)/\(id)/votes", ["limit": limit, "page": page, "orderBy": orderBy], completionHandler)
     }
 
-    public func votes(byAddress id: String, limit: Int = 100, page: Int = 1, completionHandler: @escaping ([String: Any]?) -> Void) {
-        apiGetHandler("\(endpoint)/\(id)/votes", ["limit": limit, "page": page], completionHandler)
+    public func votes(byAddress id: String, limit: Int = 100, page: Int = 1, orderBy: String = "timestamp:desc", completionHandler: @escaping ([String: Any]?) -> Void) {
+        apiGetHandler("\(endpoint)/\(id)/votes", ["limit": limit, "page": page, "orderBy": orderBy], completionHandler)
     }
 
-    public func votes(byKey id: String, limit: Int = 100, page: Int = 1, completionHandler: @escaping ([String: Any]?) -> Void) {
-        apiGetHandler("\(endpoint)/\(id)/votes", ["limit": limit, "page": page], completionHandler)
+    public func votes(byKey id: String, limit: Int = 100, page: Int = 1, orderBy: String = "timestamp:desc", completionHandler: @escaping ([String: Any]?) -> Void) {
+        apiGetHandler("\(endpoint)/\(id)/votes", ["limit": limit, "page": page, "orderBy": orderBy], completionHandler)
     }
 
     /// Searches for a wallet
-    public func search(body: [String: Any]?, limit: Int = 100, page: Int = 1, completionHandler: @escaping ([String: Any]?) -> Void) {
-        apiPostHandler("\(endpoint)/search", ["limit": limit, "page": page], body, completionHandler)
+    public func search(body: [String: Any]?, limit: Int = 100, page: Int = 1, orderBy: String = "timestamp:desc", completionHandler: @escaping ([String: Any]?) -> Void) {
+        apiPostHandler("\(endpoint)/search", ["limit": limit, "page": page, "orderBy": orderBy], body, completionHandler)
     }
 }
